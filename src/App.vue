@@ -10,15 +10,21 @@
     <ul v-for="(item,index) in state.stus" :key="index">
       <li @click="delClick(index)">{{item.name}}</li>
     </ul>
+
+    <reactive-1 />
   </div>
  
 </template>
 
 <script>
+import reactive1 from './views/compositonApi/reactive.vue'
 import {ref,reactive} from 'vue'
 import {addStudent,removeStudent} from './appEdit'
 export default {
   name: 'App',
+  components:{
+reactive1
+  },
   //setup函数是组合api的入口函数
   //ref：ref函数只能监听简单类型的变化，不能监听复杂类的变化(对象/数组)
   //reactive:监听对象数组
